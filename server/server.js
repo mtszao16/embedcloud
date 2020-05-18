@@ -237,7 +237,7 @@ function addTorrent(magnet, uniqid, client) {
         torrents[uniqid].speed = (progress == 100) ? prettyBytes(0) + '/s' : speed;
         torrents[uniqid].downloaded = downloaded;
         torrents[uniqid].progress = progress;
-        torrents[uniqid].msg = (progress == 100) ? 'Transferência concluída' : 'Baixando arquivos, pares: ' + peers;
+        torrents[uniqid].msg = (progress == 100) ? 'Download completed' : 'Downloading files, peers: ' + peers;
         sendTorrentsUpdate(io, uniqid);
     });
 }
@@ -430,18 +430,18 @@ io.on('connection', function (client) {
         session.config = {
             clientDownload: {
                 value: false,
-                displayName: "Transmitir downloads para o usuário",
+                displayName: "Stream downloads to user",
                 type: "checkbox",
-                title: "Escolha se deseja transmitir o arquivo para o cliente enquanto captura downloads ou não, se janelas não verificadas fecharão após a captura do download."
+                title: "Choose whether to stream file to client while catching downloads or not, if unchecked windows will close after download is captured."
             },
             csHead: {
                 value: true,
-                displayName: "Mostrar botão de seleção de nuvens no menu principal",
+                displayName: "Show cloud selection button in main menu",
                 type: "checkbox"
             },
             askForName: {
                 value: true,
-                displayName: "Peça o nome do arquivo ao carregar arquivos",
+                displayName: "Ask for filename when uploading files",
                 type: "checkbox"
             }
         };

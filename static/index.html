@@ -56,7 +56,7 @@
 								</div>
 							</div>
 							<div class="grouped fields">
-								<label>Nuvem selecionada : </label>
+								<label>Selected Cloud : </label>
 								<div class="field">
 									<div class="ui fluid selection dropdown scDropdown">
 										<input type="hidden" name="selectedCloud">
@@ -81,11 +81,11 @@
 				<form onsubmit="return false; " ng-submit="processForm() ">
 					<div class="ui fluid action input ">
 						<input type="text " ng-change="search.results=false " ng-model="url " ng-keydown="console.log($event.keyCode)
-					 " placeholder="Digite o URL para abrir, magnetizar ou pesquisar torrent... ">
-						<button type="submit " class="ui tiny button " ng-class="{ 'loading':magnetLoading} " ng-if="urlType()=='torrent' ">Carregar Torrent</button>
+					 " placeholder="Enter url to open, magnet or search torrent... ">
+						<button type="submit " class="ui tiny button " ng-class="{ 'loading':magnetLoading} " ng-if="urlType()=='torrent' ">Load Torrent</button>
 						<button type="submit " class="ui tiny button " ng-if="urlType()=='url' ">Open</button>
-						<button type="submit " class="ui tiny button " ng-class="{ 'loading':magnetLoading} " ng-if="urlType()=='search' ">Procurar</button>
-						<button type="submit " class="ui tiny button " ng-class="{ 'loading':magnetLoading} " ng-if="urlType()=='magnet' ">Carregar Magnet</button>
+						<button type="submit " class="ui tiny button " ng-class="{ 'loading':magnetLoading} " ng-if="urlType()=='search' ">Search</button>
+						<button type="submit " class="ui tiny button " ng-class="{ 'loading':magnetLoading} " ng-if="urlType()=='magnet' ">Load Magnet</button>
 					</div>
 				</form>
 			</div>
@@ -120,7 +120,7 @@
 		<div class="row" ng-if="search.results && search.results.length==0 && !search.loading">
 			<div class="column">
 				<div class="ui message">
-					<p>Nenhum torrent encontrado</p>
+					<p>No torrents found</p>
 				</div>
 			</div>
 		</div>
